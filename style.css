@@ -12,10 +12,11 @@ body {
     justify-content: center;
     min-height: 100vh;
     text-align: center;
-    
+
 }
-.top-left{
-    position:absolute;
+
+.top-left {
+    position: absolute;
     top: 1rem;
     left: 1rem;
     display: flex;
@@ -23,14 +24,17 @@ body {
     gap: 0.5rem;
     color: white;
 }
-.logo{
+
+.logo {
     width: 200px;
-    height: auto;    
+    height: auto;
 }
-.tagline{
+
+.tagline {
     margin: 0;
     font-size: 1rem;
 }
+
 .content {
     flex: 1;
     display: flex;
@@ -38,9 +42,10 @@ body {
     align-items: center;
     justify-content: center;
 }
+
 h1 {
     color: white;
-    font-family: "Montserrat",sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-size: 3rem;
     margin-bottom: 1rem;
 }
@@ -78,6 +83,10 @@ p {
     transition: 0.3s;
 }
 
+.btn-gradient {
+    background-color: #3b82f6;
+    color: white;
+}
 
 .btn-blue {
     background-color: #3b82f6;
@@ -99,13 +108,21 @@ p {
     color: white;
 }
 
+.scroll-left{
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.btn-direct{
+    width: 100px;
+}
 footer {
     width: 100%;
     padding: 10px;
     color: white;
     font-size: 0.9rem;
     text-align: center;
-    background: linear-gradient(to right, rgba(0, 6, 24, 0) 0%, #000618, #21445e, #000618, rgba(0, 0, 0, 0) 100% );
+    background: linear-gradient(to right, rgba(0, 6, 24, 0) 0%, #000618, #21445e, #000618, rgba(0, 0, 0, 0) 100%);
 }
 
 .wrapper {
@@ -126,7 +143,7 @@ section#Learn-More h1 {
     text-align: center;
 }
 
-section#Learn-More > p {
+section#Learn-More>p {
     margin-bottom: 2rem;
     color: white;
     text-align: center;
@@ -146,13 +163,36 @@ section#Learn-More > p {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.card-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-top: 2rem;
+}
+.direct {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-end;
+}
+
+@media (max-width: 767px) {
+    .card-wrapper {
+        align-items: center;
+    }
+
+    .direct {
+        justify-content: center;
+    }
+}
 .card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
-h2{
+
+h2 {
     color: white;
 }
+
 .card h3 {
     margin-top: 0;
     color: #ffffff;
@@ -161,13 +201,14 @@ h2{
 .card p {
     color: #e0e0e0;
     line-height: 1.5;
-    font-family: "Montserrat",sans-serif; 
+    font-family: "Montserrat", sans-serif;
 }
 
-.call-to-action p{
+.call-to-action p {
     margin-top: 1rem;
     color: linear-gradient ()
 }
+
 @media (min-width: 768px) {
     .card-container {
         display: grid;
