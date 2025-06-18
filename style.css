@@ -3,7 +3,7 @@ body {
     height: 100vh;
     background: linear-gradient(to right, #000618, #21445e, #000618);
     background-blend-mode: screen;
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     background-size: cover;
     font-family: sans-serif;
     display: flex;
@@ -24,7 +24,7 @@ body {
     color: white;
 }
 .logo{
-    width: 40px;
+    width: 150px;
     height: auto;    
 }
 .tagline{
@@ -86,7 +86,7 @@ button {
 }
 
 .btn-outline:hover {
-    background-color: #2563eb;
+    background-color: #0043C8;
     color: white;
 }
 
@@ -99,3 +99,63 @@ footer {
     background: linear-gradient(to right, rgba(0, 6, 24, 0) 0%, #000618, #21445e, #000618, rgba(0, 0, 0, 0) 100% );
 }
 
+.wrapper {
+    padding: 2rem;
+    max-width: 1200px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+section#Learn-More {
+    margin-top: 4rem;
+    text-align: left;
+}
+
+section#Learn-More h1 {
+    color: #60a5fa;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+section#Learn-More > p {
+    margin-bottom: 2rem;
+    color: white;
+    text-align: center;
+    max-width: 800px;
+    margin-inline: auto;
+}
+
+.card {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.card h3 {
+    margin-top: 0;
+    color: #60a5fa;
+}
+
+.card p {
+    color: #e0e0e0;
+    line-height: 1.5;
+}
+
+@media (min-width: 768px) {
+    .card-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+}
