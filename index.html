@@ -5,97 +5,45 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PhishScan</title>
-    <style>
-            body {
-                margin: 0;
-                height: 100vh;
-                background:
-                    radial-gradient(ellipse at 30% 30%, rgba(0, 50, 150, 0.6), transparent 60%),
-                    radial-gradient(ellipse at 70% 60%, rgba(0, 80, 255, 0.8), rgba(0, 30, 100, 0.6)),
-                    linear-gradient(135deg, rgba(10, 20, 50, 1), rgba(0, 30, 100, 0.9));
-                background-blend-mode: screen;
-                background-repeat: no-repeat;
-                background-size: cover;
-                font-family: sans-serif;
-
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            text-align: center;
-            }
-
-        h1 {
-            font-family: ;
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        p {
-            font-size: 1.2rem;
-        }
-
-        .italic {
-            font-style: italic;
-            color: #60a5fa;
-            font-weight: bold;
-        }
-
-        .button-group {
-            margin-top: 2rem;
-        }
-
-        button {
-            padding: 0.6rem 1.5rem;
-            margin: 0 0.5rem;
-            border-radius: 9999px;
-            font-weight: bold;
-            cursor: pointer;
-            border: none;
-            transition: 0.3s;
-        }
-
-        .btn-blue {
-            background-color: #3b82f6;
-            color: white;
-        }
-
-        .btn-blue:hover {
-            background-color: #2563eb;
-        }
-
-        .btn-outline {
-            background: transparent;
-            border: 2px solid #60a5fa;
-            color: #60a5fa;
-        }
-
-        .btn-outline:hover {
-            background-color: #2563eb;
-            color: white;
-        }
-
-        footer {
-            position: absolute;
-            bottom: 1rem;
-            color: #9ca3af;
-            font-size: 0.9rem;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <h1>PhishScan</h1>
-    <p>
-        <span class="italic">Artificial Intelligence</span>
-        Based solution for your long term digital security
-    </p>
-    <div class="button-group">
-        <button class="btn-blue">Get Started</button>
-        <button class="btn-outline">Learn More</button>
+    <div class="top-left">
+        <img src="img/logoo.png" alt="PhishScan Logo" class="logo">
+        <p class="tagline">Phishscan</p>
     </div>
-    <footer>© PhishScan2025</footer>
+    <div class="content">
+        <h1>PhishScan</h1>
+        <p>
+            <span class="italic">Artificial Intelligence</span>
+            Based solution for your long term digital security
+        </p>
+        <div class="button-group">
+            <button class="btn-blue">Get Started</button>
+            <button class="btn-outline">Learn More</button>
+        </div>
+    </div>
+    
+    <div class="wrapper">
+    <section id="Learn More">
+        <h1>About Phishing Links</h1>
+        <p><span class="italic">Phishing Links</span> - is a Phishing method using malicious URL designed to trick you into revealing sensitive information or downloading malware. </p>
+        <div class="card">
+            <h3>Suspicious or Misspelled URLs</h3>
+            <p>Legit domains are rarely misspelled. Be cautious of URLs like paypaI.com or g00gle.net. A single letter can be the difference between safe and scam.</p>
+        </div>
+        <div class="card">
+            <h3> Unfamiliar Domain Extensions</h3>
+            <p>Be cautious with weird domain endings like .xyz, .top, or .click. They’re cheap and often used in phishing.</p>
+        </div>
+        <div class="card">
+            <h3>No HTTPS? No Way!</h3>
+            
+        </div>
+    </section>
+</div>
+    <footer>© 2025 Your Website. All rights reserved.</footer>
 </body>
 
 </html>

@@ -1,70 +1,101 @@
-  body {
-      margin: 0;
-      font-family: sans-serif;
-      background: linear-gradient(to bottom right, #34497f, #0e1a35);
-      color: white;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      text-align: center;
-  }
+body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(to right, #000618, #21445e, #000618);
+    background-blend-mode: screen;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
+    
+}
+.top-left{
+    position:absolute;
+    top: 1rem;
+    left: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: white;
+}
+.logo{
+    width: 40px;
+    height: auto;    
+}
+.tagline{
+    margin: 0;
+    font-size: 1rem;
+}
+.content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+h1 {
+    color: white;
+    font-family: "Montserrat",sans-serif;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
 
-  h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-  }
+p {
+    color: white;
+    font-size: 1.2rem;
+}
 
-  p {
-      font-size: 1.2rem;
-  }
+.italic {
+    font-style: italic;
+    color: #60a5fa;
+    font-weight: bold;
+}
 
-  .italic {
-      font-style: italic;
-      color: #60a5fa;
-      /* blue-400 */
-      font-weight: bold;
-  }
+.button-group {
+    margin-top: 2rem;
+}
 
-  .button-group {
-      margin-top: 2rem;
-  }
+button {
+    padding: 0.6rem 1.5rem;
+    margin: 0 0.5rem;
+    border-radius: 9999px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    transition: 0.3s;
+}
 
-  button {
-      padding: 0.6rem 1.5rem;
-      margin: 0 0.5rem;
-      border-radius: 9999px;
-      font-weight: bold;
-      cursor: pointer;
-      border: none;
-      transition: 0.3s;
-  }
+.btn-blue {
+    background-color: #3b82f6;
+    color: white;
+}
 
-  .btn-blue {
-      background-color: #3b82f6;
-      color: white;
-  }
+.btn-blue:hover {
+    background-color: #2563eb;
+}
 
-  .btn-blue:hover {
-      background-color: #2563eb;
-  }
+.btn-outline {
+    background: transparent;
+    border: 2px solid #60a5fa;
+    color: white;
+}
 
-  .btn-outline {
-      background: transparent;
-      border: 2px solid #60a5fa;
-      color: #60a5fa;
-  }
+.btn-outline:hover {
+    background-color: #2563eb;
+    color: white;
+}
 
-  .btn-outline:hover {
-      background-color: #2563eb;
-      color: white;
-  }
+footer {
+    width: 100%;
+    padding: 10px;
+    color: white;
+    font-size: 0.9rem;
+    text-align: center;
+    background: linear-gradient(to right, rgba(0, 6, 24, 0) 0%, #000618, #21445e, #000618, rgba(0, 0, 0, 0) 100% );
+}
 
-  footer {
-      position: absolute;
-      bottom: 1rem;
-      color: #9ca3af;
-      /* gray-400 */
-      font-size: 0.9rem;
-  }
