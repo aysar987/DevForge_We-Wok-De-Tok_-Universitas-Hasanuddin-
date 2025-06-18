@@ -24,7 +24,7 @@ body {
     color: white;
 }
 .logo{
-    width: 150px;
+    width: 200px;
     height: auto;    
 }
 .tagline{
@@ -57,18 +57,27 @@ p {
 }
 
 .button-group {
-    margin-top: 2rem;
-}
-
-button {
     padding: 0.6rem 1.5rem;
     margin: 0 0.5rem;
     border-radius: 9999px;
     font-weight: bold;
     cursor: pointer;
-    border: none;
+    text-decoration: none;
+    display: inline-block;
     transition: 0.3s;
 }
+
+.btn {
+    padding: 0.6rem 1.5rem;
+    margin: 0 0.5rem;
+    border-radius: 9999px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: 0.3s;
+}
+
 
 .btn-blue {
     background-color: #3b82f6;
@@ -86,7 +95,7 @@ button {
 }
 
 .btn-outline:hover {
-    background-color: #0043C8;
+    background-color: #5e7bb5e0;
     color: white;
 }
 
@@ -112,7 +121,7 @@ section#Learn-More {
 }
 
 section#Learn-More h1 {
-    color: #60a5fa;
+    color: #ffffff;
     margin-bottom: 1rem;
     text-align: center;
 }
@@ -141,17 +150,24 @@ section#Learn-More > p {
     transform: translateY(-5px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
-
+h2{
+    color: white;
+}
 .card h3 {
     margin-top: 0;
-    color: #60a5fa;
+    color: #ffffff;
 }
 
 .card p {
     color: #e0e0e0;
     line-height: 1.5;
+    font-family: "Montserrat",sans-serif; 
 }
 
+.call-to-action p{
+    margin-top: 1rem;
+    color: linear-gradient ()
+}
 @media (min-width: 768px) {
     .card-container {
         display: grid;
