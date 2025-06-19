@@ -1,5 +1,6 @@
 import React from 'react';
-import './Landing-Page.css';
+import './global.css';
+
 
 const LandingPage: React.FC = () => {
   return (
@@ -11,17 +12,20 @@ const LandingPage: React.FC = () => {
       <div className="content">
         <h1>PhishScan</h1>
         <p>
-          <span className="italic">Artificial Intelligence</span>{' '}
+          <span className="highlighted-ai">
+          <span className="italic">Artificial Intelligence</span>
+          <img src="src/assets/hilighter.svg" alt="underline" className="ai-underline" />          
+          </span>{' '}
           Based solution for your long term digital security
         </p>
 
         <div className="button-group">
-          <a href="/scanner.html" className="btn btn-blue">Get Started</a>
-          <a href="/infopage.html" className="btn btn-outline">Learn More</a>
+          <a href="/src/components/execute-page.tsx" className="custom-button">Get Started</a>
+          <a href="/src/components/Info-page.tsx" className="custom-button2">Learn More</a>
         </div>
       </div>
 
-      <footer>© 2025 Your Website. All rights reserved.</footer>
+      <footer>© PhishScan2025</footer>
     </div>
   );
 };
