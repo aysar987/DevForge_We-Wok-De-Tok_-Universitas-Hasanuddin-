@@ -1,5 +1,5 @@
 import React from 'react';
-import './global.css';
+import './global.css'; // make sure the path is correct
 
 const PhishingInfoPage: React.FC = () => {
   return (
@@ -33,25 +33,24 @@ const PhishingInfoPage: React.FC = () => {
             <div className="card">
               <h3>Unfamiliar Domain Extensions</h3>
               <p>
-                Be cautious with weird domain endings like .xyz, .top, or .click. Theyre cheap and often used in
-                phishing.
+                Be cautious with weird domain endings like .xyz, .top, or .click. They’re cheap and often used in phishing.
               </p>
             </div>
             <div className="card">
               <h3>No HTTPS? No Way!</h3>
-              <p>Legit sites use HTTPS to protect your data. If you see only "http", dont trust it.</p>
+              <p>Legit sites use HTTPS to protect your data. If you see only "http", don’t trust it.</p>
             </div>
             <div className="card">
               <h3>Links From Unknown Emails or Texts</h3>
-              <p>If it comes out of nowhere and urges you to click fast, its probably a trap.</p>
+              <p>If it comes out of nowhere and urges you to click fast, it’s probably a trap.</p>
             </div>
             <div className="card">
               <h3>Too Good to Be True Offers</h3>
-              <p>"Win a free iPhone!" — classic bait. Dont fall for it.</p>
+              <p>"Win a free iPhone!" — classic bait. Don’t fall for it.</p>
             </div>
             <div className="card">
               <h3>Random Characters or Gibberish in the URL</h3>
-              <p>If the link looks messy or doesnt match the site it claims to be, its suspicious.</p>
+              <p>If the link looks messy or doesn’t match the site it claims to be, it’s suspicious.</p>
             </div>
           </div>
 

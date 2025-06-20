@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import React from 'react';
 import './global.css';
 
@@ -20,8 +21,8 @@ const LandingPage: React.FC = () => {
         </p>
 
         <div className="button-group">
-          <a href="/src/components/execute-page.tsx" className="custom-button">Get Started</a>
-          <a href="/src/components/Info-page.tsx" className="custom-button2">Learn More</a>
+           <Link to="/execute" className="custom-button">Get Started</Link>
+          <Link to="/info" className="custom-button2">Learn More</Link>
         </div>
       </div>
 
