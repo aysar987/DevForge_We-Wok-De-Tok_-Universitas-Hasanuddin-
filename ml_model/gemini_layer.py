@@ -30,13 +30,6 @@ def analyze_phishing_url_gemini(model: genai.GenerativeModel(), url: str) -> dic
         url = "http://" + url
 
     content = get_page_content(url)
-    if "error" in content:
-        return {
-            "is_phishing": False,
-            "confidence": "error",
-            "indicators": [],
-            "advice": content["error"]
-        }
 
     html_snippet = content.get("html", "")[:3000]
     js_snippet = content.get("javascript", "")[:2000]
