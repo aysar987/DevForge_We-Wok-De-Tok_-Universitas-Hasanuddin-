@@ -58,7 +58,7 @@ p {
 
 .italic {
     font-style: italic;
-    color: #ffffff;
+    color: #0194FE;
     font-weight: bold;
 }
 
@@ -155,6 +155,7 @@ section#Learn-More {
 }
 
 section#Learn-More h1 {
+    font-size: 52px;
     color: #ffffff;
     margin-bottom: 1rem;
     text-align: center;
@@ -172,12 +173,36 @@ section#Learn-More>p {
     background-color: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 12px;
-    padding: 1.5rem;
-    margin-bottom: 1.5rem;
+    padding: 1rem;
+    margin-bottom: 2rem;
     color: white;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(10px);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    max-height: 250px;
+    max-width: 100px;
+    overflow: hidden;
+
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(0,136,255,0.3) 0%, transparent 60%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+    z-index: 0;
+    filter: blur(20px);
+}
+
+.card:hover::before {
+    opacity: 1;
 }
 
 .card-wrapper{
@@ -201,16 +226,18 @@ section#Learn-More>p {
         justify-content: center;
     }
 }
+/*
 .card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
-
+*/
 h2 {
     color: white;
 }
 
 .card h3 {
+    font-size: larger;
     margin-top: 0;
     color: #ffffff;
 }
@@ -293,12 +320,12 @@ h2 {
   pointer-events: none;
 }
 
-
+/*
 .card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
-
+*/
 h2 {
     color: white;
 }
@@ -329,7 +356,7 @@ h2 {
 
 .container {
     background: rgba(0, 35, 82, 0.6);
-    padding: 30px 70px;
+    padding: 45px 110px;
     border-radius: 25px;
     box-shadow: 0 0 25px rgba(0, 123, 255, 0.2);
     text-align: center;
@@ -349,7 +376,7 @@ h2 {
 }
 
 .container input {
-    width: 300px;
+    width: 500px;
     max-width:100%;
     padding: 12px;
     margin: 35px 0;
@@ -450,4 +477,70 @@ h2 {
 .container {
   position: relative;
   z-index: 1;
+}
+
+.scroll-btn {
+    font-size: 5px;
+    color: white;
+    padding: 8px 8px;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+}
+
+.card-slider {
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    gap: 20px;
+    padding: 1rem 0;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+}
+
+.card-slider::-webkit-scrollbar {
+    display: none;
+}
+
+.card-slider .card {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    min-width: 280px;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow:
+        0 0 10px rgba(0, 136, 255, 0.6),
+        0 0 25px rgba(0, 136, 255, 0.4),
+        0 0 40px rgba(0, 136, 255, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #00aaff;
+}
+
+
+.slide-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.slide.header h2 {
+    margin: 0;
+}
+
+.slide-buttons {
+  display: flex;
+  gap: 1rem; 
+}
+.scroll-btn {
+    font-size: 20px;
+    padding: 8px 16px;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 1px solid rgba (255, 255, 255, 0.1);
 }

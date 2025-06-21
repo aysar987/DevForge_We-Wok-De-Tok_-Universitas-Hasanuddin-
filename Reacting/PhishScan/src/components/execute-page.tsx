@@ -13,7 +13,6 @@ const PhishScanPage: React.FC = () => {
       </div>
 
       <div className="card-wrapper-center">
-      <img src="src/assets/BlueLine.svg" className="glow-overlay" alt="glow" />
         <div className="container">
           <h2>Start Scanning</h2>
           <p>Paste your suspicious link here...</p>
@@ -29,6 +28,7 @@ const PhishScanPage: React.FC = () => {
           </a>
         </div>
       </div>
+      <footer>© PhishScan2025</footer>
     </div>
   );
 };
