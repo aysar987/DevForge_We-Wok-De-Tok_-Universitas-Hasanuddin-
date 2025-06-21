@@ -5,6 +5,7 @@ from flask_cors import CORS
 from urllib.parse import urlparse
 from extract_fitur import subdomain_count, calculate_entropy, get_domain_age_days, is_ssl_valid, is_public_hosting
 from rule_based import rule_based_check
+from check_html_js import get_page_content
 from gemini_layer import analyze_phishing_url_gemini
 import google.generativeai as genai
 import json
@@ -27,7 +28,7 @@ if not GEMINI_API_KEY:
 else:
     try:
         genai.configure(api_key=GEMINI_API_KEY)
-        gemini_model = genai.GenerativeModel('gemini-1.5-flash')
+        gemini_model = genai.GenerativeModel('gemini-2.5-flash')
         print("Gemini AI Model berhasil diinisialisasi.")
     except Exception as e:
         print(f"Error saat inisialisasi Gemini AI Model: {str(e)}")
@@ -100,6 +101,7 @@ def predict():
         if 0.1 <= prob <= 0.6:
             if gemini_model:
                 print("Memanggil Gemini AI untuk analisis lebih lanjut (kasus ambigu ML)...")
+
                 result = analyze_phishing_url_gemini(gemini_model, url)
                 
                 print(f"  Respon Gemini: is_phishing={result.get('is_phishing', 'N/A')}, confidence={result.get('confidence', 'N/A')}")

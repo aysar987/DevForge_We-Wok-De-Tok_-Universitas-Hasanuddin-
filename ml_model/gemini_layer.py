@@ -1,7 +1,27 @@
 import json
 import google.generativeai as genai
+import requests
+from bs4 import BeautifulSoup
 
-def analyze_phishing_url_gemini(model: genai.GenerativeModel, url: str) -> dict:
+def get_page_content(url):
+    try:
+        headers = {"User-Agent": "Mozilla/5.0"}
+        response = requests.get(url, headers=headers, timeout=10)
+        response.raise_for_status()
+
+        soup = BeautifulSoup(response.text, 'html.parser')
+        html_content = soup.prettify()
+        js_scripts = "\n".join([script.string for script in soup.find_all('script') if script.string])
+
+        return {
+            "html": html_content[:5000],  # batasi agar tidak terlalu panjang
+            "javascript": js_scripts[:3000]
+        }
+    except Exception as e:
+        return {"error": f"Gagal mengambil halaman: {str(e)}"}
+
+
+def analyze_phishing_url_gemini(model: genai.GenerativeModel('gemini-2.5-flash'), url: str) -> dict:
     """
     Menganalisis URL phishing menggunakan Gemini API berdasarkan struktur URL.
     Menerima objek model Gemini yang sudah dikonfigurasi sebelumnya (dari app.py).
@@ -9,8 +29,21 @@ def analyze_phishing_url_gemini(model: genai.GenerativeModel, url: str) -> dict:
     if not url.startswith("http://") and not url.startswith("https://"):
         url = "http://" + url
 
+    content = get_page_content(url)
+    if "error" in content:
+        return {
+            "is_phishing": False,
+            "confidence": "error",
+            "indicators": [],
+            "advice": content["error"]
+        }
+
+    html_snippet = content.get("html", "")[:3000]
+    js_snippet = content.get("javascript", "")[:2000]
+
     prompt = f"""
-    Anda adalah seorang ahli keamanan siber. Tugas Anda adalah menganalisis apakah URL berikut merupakan URL phishing atau bukan, hanya berdasarkan strukturnya (tanpa mengakses kontennya).
+    Bayangkan anda adalah Gemini model 2.5 Flash dan anda sekarang harus bisa berpikir dan bertindak seperti Gemini model 2.5 Flash.
+    Tugas Anda adalah menganalisis apakah URL berikut merupakan URL phishing atau bukan, hanya berdasarkan strukturnya (tanpa mengakses kontennya).
     Analisislah URL berikut:
     URL: {url}
 
@@ -27,11 +60,19 @@ def analyze_phishing_url_gemini(model: genai.GenerativeModel, url: str) -> dict:
     10. **Tidak menggunakan HTTPS atau sertifikat SSL tidak valid.**
     11. **Hosting publik** yang dimana biasa digunakan untuk url phishing seperti Firebase, GitHub Pages, Heroku, Glitch, dll.
 
-    Tentukan apakah URL tersebut mencurigakan sebagai phishing berdasarkan indikator di atas serta analisislah kemungkinan lain yang mencurigakan.
+    Dan berdasarkan script html dan javascript yang ada pada halaman tersebut
+    Script untuk html: 
+    {html_snippet}
 
-    Berikan hasil Anda dalam format JSON yang valid dan lengkap seperti berikut:
+    Script untuk javascript:
+    {js_snippet}
+
+    Analisislah apakah terdapat bagian mencurigakan dari script yang memungkinkan web mengandung phishing, malware atau hal berbahaya lainnya. 
+    Kemudian tentukan apakah URL tersebut mencurigakan sebagai phishing berdasarkan indikator dan script di atas serta analisislah kemungkinan lain yang mencurigakan.
+
+    jika sebesar 60% tanda-tanda mencurigakan simpulkan link tersebut berbahaya Berikan hasil dalam format JSON yang valid dan lengkap seperti berikut:
     {{
-    "is_phishing": true/false,
+    "is_phishing": true/false yang dimana true menunjukkan bahwa URL tersebut mencurigakan sebagai phishing dan false menunjukkan bahwa URL tersebut tidak mencurigakan sebagai phishing,
     "confidence": "tinggi/sedang/rendah",
     "indicators": ["indikator1", "indikator2", "..."],
     "advice": "saran keamanan atau rekomendasi"
@@ -65,6 +106,7 @@ def analyze_phishing_url_gemini(model: genai.GenerativeModel, url: str) -> dict:
             "indicators": [],
             "advice": f"Terjadi error saat berkomunikasi dengan Gemini API: {str(e)}"
         }
+    
 
 if __name__ == "__main__":
     import os
