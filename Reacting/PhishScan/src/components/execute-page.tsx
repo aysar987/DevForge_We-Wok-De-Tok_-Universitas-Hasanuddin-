@@ -1,7 +1,36 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './global.css';
 
-const PhishScanPage: React.FC = () => {
+const ExecutePage: React.FC = () => {
+
+  const [url, setUrl] = useState('');
+  const [result, setResult] = useState<any>(null);
+  const navigate = useNavigate();
+
+  const handleScan = async () => {
+    if (!url) return alert('Harap masukkan URL!');
+    try {
+      const response = await fetch('http://localhost:3000/api/scan', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ url })
+      });
+      const data = await response.json();
+      setResult(data);
+      console.log('Hasil scan: ', data);
+
+      if (data.isPhishing) {
+        navigate('/unsafe', { state: { detail: data } });
+      } else {
+        navigate('/safe', { state: { detail: data } });
+      }
+
+    } catch (error) {
+      console.error('Error scanning URL:', error);
+    }
+  };
+
   return (
     <div>
       <div className="top-left">
@@ -19,13 +48,15 @@ const PhishScanPage: React.FC = () => {
           <div className="input-wrapper">
           <input
             type="text"
+            value={url}
+            onChange={(e) => setUrl(e.target.value)}
             placeholder="https://example.com..."
             className="container input"
           />
           </div>
-          <a href="unsafe.html" className="custom-button">
+          <button onClick={handleScan} className="custom-button">
             Scan
-          </a>
+          </button>
         </div>
       </div>
       <footer>© PhishScan2025</footer>
@@ -33,4 +64,4 @@ const PhishScanPage: React.FC = () => {
   );
 };
 
-export default PhishScanPage;
+export default ExecutePage;

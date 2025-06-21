@@ -1,17 +1,14 @@
 const express = require('express');
-const cors = require('cors');
-const scanRoute = require('./routes/scan');
-
 const app = express();
-app.use(cors({
-    origin: 
-}));
+const cors = require('cors');
+
+const scanRouter = require('./routes/scan');
+
+app.use(cors());
 app.use(express.json());
+app.use('/api', scanRouter);
 
-app.use('/api/scan-url', scanRoute);
-
-const PORT = process.env.PORT || 5000;
+const PORT = 3000;
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+  console.log(`Node.js backend listening on http://localhost:${PORT}`);
 });
-

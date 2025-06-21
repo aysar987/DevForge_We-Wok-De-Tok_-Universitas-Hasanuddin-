@@ -21,7 +21,7 @@ def get_page_content(url):
         return {"error": f"Gagal mengambil halaman: {str(e)}"}
 
 
-def analyze_phishing_url_gemini(model: genai.GenerativeModel('gemini-2.5-flash'), url: str) -> dict:
+def analyze_phishing_url_gemini(model: genai.GenerativeModel(), url: str) -> dict:
     """
     Menganalisis URL phishing menggunakan Gemini API berdasarkan struktur URL.
     Menerima objek model Gemini yang sudah dikonfigurasi sebelumnya (dari app.py).

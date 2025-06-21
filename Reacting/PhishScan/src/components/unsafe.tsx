@@ -18,7 +18,7 @@ const UnsafePage: React.FC = () => {
           <div className="input-wrapper">
           <input
             type="text"
-            placeholder="https://example.com..."
+            placeholder="https://example.comsssssss..."
             className="container input"
           />
           </div>
