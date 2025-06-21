@@ -13,8 +13,6 @@ const LandingPage: React.FC = () => {
       <div className="content">
         <h1>PhishScan</h1>
         <p>
-
-
           <span className="highlighted-ai">
           <span className="italic">Artificial Intelligence</span>
           <img src="src/assets/hilighter.svg" alt="underline" className="ai-underline" />          
