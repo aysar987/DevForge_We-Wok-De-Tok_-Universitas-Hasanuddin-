@@ -1,4 +1,3 @@
-
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import LandingPage from './components/Landing-Page';
 import PhishingInfoPage from './components/Info-page';
@@ -12,10 +11,10 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<LandingPage />} />
-        <Route path="/info" element={<PhishingInfoPage />} />\
+        <Route path="/info" element={<PhishingInfoPage />} />
         <Route path="/execute" element={<ExecutePage />} />
-        <Route path="/safe" element={<SafePage />} />
-        <Route path="/unsafe" element={<UnsafePage />} />
+        <Route path="/safe" element={<SafePage/>}/>
+        <Route path="/unsafe" element={<UnsafePage/>}/>
       </Routes>
     </Router>
   );
