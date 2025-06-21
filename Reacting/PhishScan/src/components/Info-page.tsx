@@ -1,11 +1,12 @@
+import { Link } from 'react-router-dom';
 import React from 'react';
-import './global.css'; // make sure the path is correct
+import './global.css';
 
 const PhishingInfoPage: React.FC = () => {
   return (
     <div>
       <div className="top-left">
-        <img src="/img/Logo_PhishScan.png" alt="PhishScan Logo" className="logo" />
+        <img src="/public/Image/phish-small.svg" alt="PhishScan Logo" className="logo" />
       </div>
 
       <div className="wrapper">
@@ -19,10 +20,6 @@ const PhishingInfoPage: React.FC = () => {
           <h2>TIPS TO STAY SAFE</h2>
 
           <div className="card-wrapper">
-            <div className="direct">
-              <img src="/img/Kiri Dark.png" alt="left" className="btn-direct" />
-              <img src="/img/Kanan Light.png" alt="right" className="btn-direct" />
-            </div>
           </div>
 
           <div className="card-container">
@@ -54,9 +51,7 @@ const PhishingInfoPage: React.FC = () => {
             </div>
           </div>
 
-          <a href="/scanner.html" className="btn btn-gradient">
-            Scan Now →
-          </a>
+          <Link to="/" className="custom-button2">Scan Now</Link>
         </section>
       </div>
     </div>
