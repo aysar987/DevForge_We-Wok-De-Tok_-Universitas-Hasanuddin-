@@ -1,0 +1,26 @@
+body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(to right, #000618, #21445e, #000618);
+    background-blend-mode: screen;
+    background-repeat: repeat;
+    background-size: cover;
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
+
+}
+
+.top-left {
+    position: absolute;
+    top: -1cm;
+    left: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: white;
+}
