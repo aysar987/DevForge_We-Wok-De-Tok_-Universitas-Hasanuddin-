@@ -1,19 +1,4 @@
-<<<<<<< HEAD
-import LandingPage from './components/Landing-Page'
-import './App.css'
 
-function App() {
-
-  return (
-    <div>
-      <LandingPage />
-    </div>
-  );
-}
-
-export default App
-
-=======
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import LandingPage from './components/Landing-Page';
 import PhishingInfoPage from './components/Info-page';
@@ -33,4 +18,4 @@ function App() {
 }
 
 export default App;
->>>>>>> 679a7443d32afd7e5126dbe721e69c96eb5c46eb
+
