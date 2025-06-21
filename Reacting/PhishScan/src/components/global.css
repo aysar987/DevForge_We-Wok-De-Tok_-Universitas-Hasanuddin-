@@ -327,26 +327,43 @@ h2 {
     }
 }
 
-.container /*scanner*/{
+.container {
     background: rgba(0, 35, 82, 0.6);
-    padding: 30px 40px;
-    border-radius: 20px;
+    padding: 30px 70px;
+    border-radius: 25px;
     box-shadow: 0 0 25px rgba(0, 123, 255, 0.2);
     text-align: center;
     max-width: 400px;
     width: 100%;
-    border: 1px solid #0090ff4f;
+    border: 2px solid #0090ff4f;
     margin: auto;
+}
+.container h2{
+    font-style: italic;
+    font-size: 35px;
+    margin-top: -10px
+}
+.container p{
+    font-size: 14px;
+    margin-bottom: -30px;
 }
 
 .container input {
-    width: 100%;
+    width: 300px;
+    max-width:100%;
     padding: 12px;
-    margin: 15px 0;
-    border: none;
-    border-radius: 10px;
+    margin: 35px 0;
+    border: 2px solid linear-gradient(to right, #00C3FD, #0194FE);
+    border-radius: 35px;
     background-color: #0d1a2f;
     color: #fff;
+    align-items: center;
+}
+.input-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 10px;
 }
 
 .scan-btn /*start scanning*/ {
@@ -413,8 +430,24 @@ h2 {
 
 .card-wrapper-center /*card result position*/ {
     display: flex;
+    position: relative;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     padding: 20px;
+}
+
+.glow-overlay {
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 250px;
+  opacity: 0.4;
+  filter: blur(2px);
+  pointer-events: none;
+  z-index: 0;
+}
+.container {
+  position: relative;
+  z-index: 1;
 }

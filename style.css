@@ -195,22 +195,9 @@ section#Learn-More>p {
     box-sizing: border-box;
 }
 
-.direct
-
-/* info page button*/
-    {
-    display: flex;
-    gap: 1rem;
-    align-items: flex-end;
-}
-
 @media (max-width: 767px) {
     .card-wrapper {
         align-items: center;
-    }
-
-    .direct {
-        justify-content: center;
     }
 }
 

@@ -6,22 +6,25 @@ const PhishScanPage: React.FC = () => {
     <div>
       <div className="top-left">
         <img
-          src="img/Logo_PhishScan.png"
+          src="/public/Image/phish-small.svg"
           alt="PhishScan Logo"
           className="logo"
         />
       </div>
 
       <div className="card-wrapper-center">
+      <img src="src/assets/BlueLine.svg" className="glow-overlay" alt="glow" />
         <div className="container">
           <h2>Start Scanning</h2>
-          <p>Paste your suspicious link here</p>
+          <p>Paste your suspicious link here...</p>
+          <div className="input-wrapper">
           <input
             type="text"
-            placeholder="https://xxx.com..."
-            disabled
+            placeholder="https://example.com..."
+            className="container input"
           />
-          <a href="unsafe.html" className="scan-btn">
+          </div>
+          <a href="unsafe.html" className="custom-button">
             Scan
           </a>
         </div>
